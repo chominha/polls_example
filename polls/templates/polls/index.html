@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if latest_question_list %}
+    <ul><!--질문을 동적으로 가져와 템플릿에 쳐리해준다.-->
+        {% for question in latest_question_list %} <!--for문 어디서 부터 어디까지 범위 지정-->
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <p>No polls are available.</p>
+
+{% endif %}
+
+</body>
+</html>
