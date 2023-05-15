@@ -19,7 +19,6 @@ from polls import views
 
 
 urlpatterns = [
-    path('', admin.site.urls),
     path('admin/', admin.site.urls),
     path('polls/', include('polls.urls')) #polls속 urls를 참고해.
 

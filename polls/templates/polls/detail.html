@@ -10,15 +10,13 @@
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 <form action="{% url 'polls:vote' question.id %}" method="post">
-    {% crsf_token %} <!--보안 토큰-->
+    {% csrf_token %} <!--보안 토큰-->
     {% for choice in question.choice_set.all %} <!--연결 테이블 1:N -->
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id}}" />
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
-
     {% endfor %}
 
-    <input type="submit" value="투표하기"/>
-
+    <input type="submit" value="투표하기" />
 </form>
 
 </body>

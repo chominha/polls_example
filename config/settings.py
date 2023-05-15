@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-81k-vtf$)k2c^j+jtf$3!ul9)q$l$g&tb408o&992s=c!61jr^
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+#작동시킬 주소값. *표시면 어떤 주소든 상관없다는 뜻.
 
 
 # Application definition
