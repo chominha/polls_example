@@ -3,10 +3,11 @@ from django.db import models
 # Create your models here.
 class Question(models.Model): #레코드 하나를 객체로 가짐.
     question_text = models.CharField(max_length=200) #퀘스천 클래스임
-    pub_date = models.DateField('date published') #퀘스천 클래스임.
+    pub_date = models.DateTimeField('date published') #퀘스천 클래스임.
     #질문. 날짜.
 #인스턴스 : 클래스(추상화된 것 )의 객체(복제 판들)
 #사는곳은? 하나가 퀘스천 클래스의 객체 하나임.
+    #데이트 필드는 날짜만 들어가고 데이트 타임필드는 타임과 날짜가 들어가기 떄문에 두개가 입력되어야 해서 오류가 발생할 수 있다.
 
     def __str__(self):
         return self.question_text
